@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+        <title>Rotational kinetic energy Calculator</title>
+        <link href="styles.css" rel="stylesheet">                    <!--here i linked the styles file-->
+        
+        
+    </head>
+    <body>
+        <header>
+            <h1 class="title">Rotational kinetic energy Calculator</h1>                             <!--this is the title of the calculater  -->
+        </header>
+        <section id="header-container">                                                     <!-- this is a section for the container with an id to use in script  -->
+            <select id="varu" onclick="update();">                                         <!-- here i use onclick if the user chose one of the values under its run the function update to display the variables grid   -->
+                <option value="variable-Choice" hidden>click here to calculate a value!</option>        <!-- here where the user asked to chose and this value is hidden because its not choice   -->
+                <option value="rotational energy">rotational energy</option>                   <!-- this is an option with a value to use in the script -->
+                <option value="moment of inertia">moment of inertia</option>                  
+                <option value="angular velocity">angular velocity</option>
+                
+            </select>
+        </section>                                                  
+        <div class="variables-grid">                                                       <!--this is the grid where the header and inputs for the values also the calculate button and the result inside this class variable grid  --> 
+            <div class="input1" id="input1header" style="display:none"></div>                <!--this is the  input header tells the user the name of value he needs to enter--><!-- i used ((style="display:none")) and ((hidden)) to hide the hidder until the user chose one of the variables -->
+            <input type="hidden" id="input1"  onkeypress="return /[0-9.*^]/i.test(event.key)" />                <!--this is the first input-->                  
+            <div class='input2' id="input2header" style="display:none"></div>                
+            <input type="hidden" id="input2"  onkeypress="return /[0-9.*^]/i.test(event.key)" />                   <!--i used this code onkeypress="return /[0-9.*^]/i.test(event.key)" to limit the user from entring charicters just numers and */+-^ -->            
+            <div class='input3' id="input3header" style="display:none"></div>  
+            <input type="hidden" id="input3"  onkeypress="return /[0-9.*^]/i.test(event.key)" />
+
+            <button class='calculate' hidden="hidden" id='Calculate' onclick="calc();">Calculate</button>      <!--this is the calculate button-->   <!--its hidden until the user chose what to calculate--><!--used onclick to run the script calc  -->
+            <div class="output" id="OutputBox" style="display:none">                                             <!--this is the output box where the result will apper in it-->
+                <div class="result" style="display:none" id="result"></div>                       <!--this is the result -->                                                                                       
+            </div>
+            
+        </div>
+      
+    </body>
+
+    <script>
+    function update() {                                                            // update function 
+     
+        var calc = document.getElementById('varu').value;
+        
+        if(calc === 'rotational energy') {                                          //if user chose rotaional energy this script will start
+
+            document.getElementById('input1').value = '';                       //take inputs from the user 
+            document.getElementById('input2').value = '';
+    
+            document.getElementById('input1header').innerText = 'moment of inertia(I)';       // and here to display the input header to show what user should enter 
+            document.getElementById('input2header').innerText = 'angular velocity (ω)';
+    
+            document.getElementById('input1header').style.display = '';                      // this is to display the styel of the input header
+            document.getElementById('input2header').style.display = '';
+            document.getElementById('input3header').style.display = 'none';                
+    
+            document.getElementById('input1').type = 'text';                                // this to allow user enter text  
+            document.getElementById('input2').type = 'text';
+            document.getElementById('input3').type = 'hidden';
+    
+            document.getElementById('Calculate').hidden = "";                               // this to display the buton calculate when the user chose rotational energy    
+    
+            document.getElementById('OutputBox').style.display = '';                       // this to display the outputbox when the user chose rotational energy
+            document.getElementById('result').innerText = ''                              //this is the result 
+    
+        }
+        if(calc === 'moment of inertia') {
+            
+            document.getElementById('input1').value = '';
+            document.getElementById('input2').value = '';
+    
+            document.getElementById('input1header').innerText = 'rotational kinetic energy(K)';
+            document.getElementById('input2header').innerText = 'angular velocity (ω)';
+            
+            document.getElementById('input1header').style.display = '';
+            document.getElementById('input2header').style.display = '';
+            document.getElementById('input3header').style.display = 'none';         
+            document.getElementById('input1').type = 'text';
+            document.getElementById('input2').type = 'text';
+            document.getElementById('input3').type = 'hidden';                    
+    
+            document.getElementById('Calculate').hidden = "";
+    
+            document.getElementById('OutputBox').style.display = '';
+            document.getElementById('result').innerText = ''
+        }
+        if(calc === 'angular velocity') {
+            
+            document.getElementById('input1').value = '';
+            document.getElementById('input2').value = '';
+    
+            document.getElementById('input1header').innerText = 'rotational kinetic energy(K)';
+            document.getElementById('input2header').innerText = 'moment of inertia(I)';
+            
+            document.getElementById('input1header').style.display = '';                              
+            document.getElementById('input2header').style.display = '';
+            document.getElementById('input3header').style.display = 'none';
+    
+            document.getElementById('input1').type = 'text';
+            document.getElementById('input2').type = 'text';
+            document.getElementById('input3').type = 'hidden';
+    
+            document.getElementById('Calculate').hidden = "";
+    
+            document.getElementById('OutputBox').style.display = '';
+            document.getElementById('result').innerText = ''
+            
+        }
+        
+    }
+    
+    function calc()                                                 // this is the calculate function 
+    {
+        var n1 = parseFloat(document.getElementById('input1').value);         //n1 is the first input  input1
+        var n2 = parseFloat(document.getElementById('input2').value);         //n2 is the second input  input2
+        var n3 = parseFloat(document.getElementById('input3').value);         //n3 is the second input  input3
+        
+    
+        
+        var calc = document.getElementById('varu').value;           // first we get the variables        
+        
+        if(calc === 'rotational energy')                        // if user chose the rotational energy 
+        {
+            document.getElementById('result').style.display  = '';        //  display the rseult style
+            document.getElementById('result').innerText =  0.5 * n1 * n2 * n2 + ' J';     //here to calculate the inputs user wrote 
+        }
+        
+        if(calc === 'moment of inertia')
+        {
+            document.getElementById('result').style.display  = '';             
+            document.getElementById('result').innerText = (n1) / (1/2 * n2 * n2) + 'kg*m²' ;
+            
+        }
+        
+        if(calc === 'angular velocity')
+        {
+            document.getElementById('result').style.display  = '';
+            document.getElementById('result').innerText = Math.sqrt((n1) / (1/2 * n2))  + 'rad/s' ;
+         
+        }
+       
+        if (isNaN(n1)){                                 // this function work if the user left the inputs empty  
+            document.getElementById('result').innerText = 'enter a vlaid numper';
+            
+        }
+        if (isNaN(n2)){
+        document.getElementById('result').innerText = 'enter a vlaid numper';
+        }
+
+       
+        
+        
+    }
+    </script>
+</html>

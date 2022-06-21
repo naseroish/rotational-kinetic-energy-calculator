@@ -1,0 +1,179 @@
+*, *::before, *::after {                
+    box-sizing: border-box;
+    font-family: cursive;;
+    font-weight: normal;
+    
+    
+}
+.header-container {position: relative;
+    font-family: Arial;
+    
+}
+body {
+
+    background: url('./web-background.jpg')  center center/cover;          
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.variables-grid {                  /* the grid style */
+    display: grid;                 /* display the grid  */
+    justify-content: center;         /*  grid psition */
+    align-content: center;           /* the grid style */
+    min-height: 100vh;            
+    grid-template-columns: repeat(5, 130px);
+    grid-template-rows: minmax(100px, auto) repeat(7, 100px);    
+    
+}
+
+
+
+.title {                              /* the title style */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 4rem;
+    color: rgb(179, 179, 179);
+}
+
+.variables-grid > .input1 {
+    cursor: default;
+    font-size: 1.7rem;
+    border: 1.5px solid rgb(70, 69, 69);       /* input border style*/
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.459);   /*input background color*/
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.variables-grid > .input2 {
+    cursor: default;           /*this is a cursor*/
+    font-size: 1.7rem;
+    border: 1.5px solid rgb(70, 69, 69);
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.459);
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.variables-grid > .input3 {
+    cursor: default;           /*this is a cursor*/
+    font-size: 1.7rem;
+    border: 1.5px solid rgb(70, 69, 69);
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.459);
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.variables-grid > .input4 {
+    cursor: default;           /*this is a cursor*/
+    font-size: 1.7rem;
+    border: 1.5px solid rgb(70, 69, 69);
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.459);
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    text-align: center;
+    padding: 30px 0;
+}
+
+
+
+
+.variables-grid > input {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1.5px solid rgb(70, 69, 69);
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.459);
+    grid-column: span 2;
+    align-items: center;
+    text-align:center
+}
+
+.variables-grid > input:hover {
+    background-color: rgba(182, 181, 181, 0.9);
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+
+
+.variables-grid > .calculate {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1.5px solid rgb(70, 69, 69);
+    
+    background-color: rgba(255, 255, 255, 0.459);
+    grid-column: span 5;
+}
+
+.variables-grid > .calculate:hover {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid white;
+   
+    background-color: rgba(182, 181, 181, 0.9);
+}
+
+.output .result {
+    color: whitesmoke;
+    font-size: 2.5rem;
+}
+
+
+  
+
+
+  select {
+    font-size: 1rem;
+    
+    appearance: none;
+    color: whitesmoke;
+    border: none;
+
+    outline: 0;
+    padding: 0.65em 2.5em 0.55em 4.5em;
+    border-radius:25px;
+    background-color: #2e2c2c4f;
+    width: 350px;
+    height: 70px;
+    left: 50%;
+    top: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+
+  }
+  
+  select:hover {
+    cursor: pointer;
+    background-color: rgba(105, 105, 105, 0.781);
+  }
+  
